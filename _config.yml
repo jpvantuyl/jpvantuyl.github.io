@@ -1,13 +1,13 @@
 #
 # Blog Settings
 #
-author: John Van Tyyl
+author: John Van Tuyl
 description: Software Developer
-url: http://jpvantuyl.github.io
+url: https://jpvantuyl.github.io
 title: John Van Tuyl
 subtitle: Software Developer
 gravatar_url: https://2.gravatar.com/avatar/9e8fedfcd92b20263ceaab4e6cec2202
-#subscribe_rss: http://feeds.haacked.com/haacked
+subscribe_rss: https://jpvantuyl.github.io/atom.xml
 
 # Github repositories
 github_user: jpvantuyl
