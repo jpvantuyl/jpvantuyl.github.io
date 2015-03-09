@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "To Blog or Not To Blog"
+title: "Blogging Like Speed Chess"
 date: 2014-08-14 -0800
 comments: false
 categories: [meta]
 ---
-
-# Blogging like speed chess
 
 So I'm having a tough time managing my time.  There are a boat load of legitimate needs that take priority over writing about technical subjects.  It's tough to argue with a two month old that you just need to scribble down a few more thoughts before you can get her more milk.
 
