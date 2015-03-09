@@ -3,7 +3,7 @@ layout: post
 title: "Why Learn Node.js?"
 date: 2014-08-14 -0800
 comments: false
-categories: [node.js javascript testing education]
+categories: [node.js, javascript, testing, education]
 ---
 
 Because it's a new technology that solves the same old problems in new ways.  JavaScript on the server has to work pretty hard to be maintainable so you'll have to learn about `npm` for package management,`require` for includes/dependencies, and testing frameworks like `jasmine` to make sure your code is kosher.  These are the same powerful patterns that have influenced modern software development on other platforms.
