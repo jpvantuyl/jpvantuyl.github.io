@@ -32,6 +32,7 @@ Ayende makes it clear that he's exploring a new project, he outlines his methodo
 
 > http_transporter.go is next, and is a blow to my hope that this will do a one way messaging system. I’m thinking about doing Raft over ZeroMQ or NanoMSG. Here is the actual process of sending data over the wire:
 > 
+>     ```csharp
 >     // Sends an AppendEntries RPC to a peer.
 >     func (t *HTTPTransporter) SendAppendEntriesRequest(server Server, peer *Peer, req *AppendEntriesRequest) *AppendEntriesResponse {
 >         var b bytes.Buffer
@@ -59,6 +60,7 @@ Ayende makes it clear that he's exploring a new project, he outlines his methodo
 >     
 >         return resp
 >     }
+>     ```
 > 
 > This is very familiar territory for me, I have to say :). Although, again, there is a lot of wasted memory here by encoding the data multiple times, instead of streaming it directly.
 
