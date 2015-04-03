@@ -2,7 +2,7 @@
 layout: post
 title: "From Gost To Github"
 date: 2015-03-31 -0800
-comments: false
+comments: true
 categories: [meta]
 ---
 
