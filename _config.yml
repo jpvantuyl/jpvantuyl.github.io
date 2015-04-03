@@ -18,7 +18,7 @@ twitter_user: jpvantuyl
 twitter_tweet_button: true
 
 # Disqus Comments
-#disqus_short_name: haacked
+disqus_short_name: jpvantuyl
 #disqus_show_comment_count: true
 
 # Google Analytics
