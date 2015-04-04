@@ -18,8 +18,8 @@ twitter_user: jpvantuyl
 twitter_tweet_button: true
 
 # Disqus Comments
-disqus_short_name: jpvantuyl
-#disqus_show_comment_count: true
+disqus_short_name: johnvantuyl
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-48718702-1
