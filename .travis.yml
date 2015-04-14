@@ -1,4 +1,4 @@
 language: ruby
+install: travis_wait bundle install
 rvm:
     - 2.1.1
-script: jekyll build
