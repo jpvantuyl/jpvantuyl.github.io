@@ -24,7 +24,7 @@ A koans project is easiest to stand up when leveraging a nice unit testing frame
 
 In this example, we're piping `$true` to the `Should` function which then asserts equality using the `Be` function.  The thing is, you don't need to know how the functions are implemented or much of anything about Powershell to get started.  Even for a novice, the syntax has sufficient context to lead you to the correct solution.
 
-![powershell koans](https://johnvantuyl.com/2015/05/13/powershell-koans-solutions.png)
+![powershell koans](https://johnvantuyl.com/images/content/2015/05/powershell-koans-solutions.png)
 
 Deeper down the rabbit hole
 -------
