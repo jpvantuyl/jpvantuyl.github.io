@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From Gost To Github"
+title: "From Ghost To Github"
 date: 2015-03-31 -0800
 comments: true
 categories: [meta]
