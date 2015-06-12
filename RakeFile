@@ -1,6 +1,6 @@
 require "html/proofer"
 
-`chcp 65001`
+#`chcp 65001`
 
 task :test do
   sh "bundle exec jekyll build --trace"
