@@ -16,11 +16,11 @@ Bring on the Pretty Pictures
 
 Here's a graph of [pemcostyle.css](https://pemco.com/_elements/css/pemcostyle.css) from the Pemco.com home page.  The graph is [generated](http://jonassebastianohlsson.com/specificity-graph/) from a GitHub project by Jonas Ohlosson.
 
-![](/images/content/2014/11/css-specificity.jpg)
+![css specificity](/images/content/2014/11/css-specificity.jpg)
 
 And here's what Harry thinks a good graph looks like (sloping up and to the right) from his blog post.
 
-![](/images/content/2014/11/specificity-graph.png)
+![specificity graph](/images/content/2014/11/specificity-graph.png)
 
 So, what are we supposed to get out of visualizing a CSS specificity graph?  Harry Roberts suggests that a spikey graph indicates a less maintainable codebase.  CSS style sheets are challenging to write in part because they always read top to bottom (left to right on the graph) so that a CSS selector that is both at the top of the style sheet and has high specificity will limit our ability to style other elements later in the doc.  Overriding such a selector may not be possible or if it is it may require undesirable hacks like `!important` that make further changes even more challenging.  Mis-use of CSS specificity creates a slippery slope.
 
