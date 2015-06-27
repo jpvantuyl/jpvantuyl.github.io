@@ -15,7 +15,7 @@ github_repo_url: https://github.com/jpvantuyl/jpvantuyl.github.io/
 
 # Twitter
 twitter_user: jpvantuyl
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Disqus Comments
 #disqus_short_name: johnvantuyl
