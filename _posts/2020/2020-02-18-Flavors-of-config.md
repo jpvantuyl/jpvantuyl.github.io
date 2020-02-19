@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "All the flavors of config"
-date: 2020-02-14 -0800
+date: 2020-02-18 -0800
 comments: false
 categories: [configuration]
 ---
