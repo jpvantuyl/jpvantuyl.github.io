@@ -8,19 +8,17 @@ categories: [Git,tfs]
 
 Git is a tool that provides source control.  Our current TFS server supports TF for source control and Git.
 
+## Installation
 
-Installation
-We recommend one of two options to install Git on your machine.
+I recommend one of two options to install Git on your machine.
 
-There’s a .MSI that you can download and install from https://gitforwindows.org/.  The tool should prompt you for how you want it installed (just accept the defaults).
+There’s a .MSI that you can download and install from <https://gitforwindows.org/.>  The tool should prompt you for how you want it installed (just accept the defaults).
 
+The alternative is to use the Chocolatey package manager for Windows to install Git from the commandline ([link](https://chocolatey.org/packages/git)).
 
- 
+![poshgit](/images/content/2020/poshgit.jpg)
 
-The alternative is to use the Chocolatey package manager for Windows to install Git from the commandline (link).
-
-
-If you’re going the Chocolatey route try choco install poshgit for PowerShell integration and choco install gittfs --version=0.29.0 for TFS integration.
+If you’re going the Chocolatey route try `choco install poshgit` for PowerShell integration and `choco install gittfs --version=0.29.0` for TFS integration.
 
 With either approach you should end with git.exe available on your path from some sort of commandline.  As long as Git is available from the commandline then all other tooling built on top of Git should work.
 
@@ -31,59 +29,59 @@ Git requires some configuration.  At a minimum you need to set your full name an
 
 There’s a number of other configuration options you can specify.  The easiest way to get some helpful defaults is to type git config --global -e into a command prompt.  This should open the global .gitconifg file in your default text editor.  Then you can copy/paste/edit based on the following:
 
-# This is Git's per-user configuration file.
-[user]
-# Please adapt and uncomment the following lines:
-    #name = John Van Tuyl
-    #email = jpvant@pemco.com
-	useConfigOnly = true
-[core]
-    # These CR/LF settings seem to work well for repositories that will only be edited on Windows machines.
-	autocrlf = false
-    safecrlf = false
-    excludesfile = H:\\My Documents\\gitignore_global.txt
-    editor = '"C:\\Program Files\\Microsoft VS Code\\Code.exe"'
-    filemode = false
-[help]
-    autocorrect = 20  # git will re-submit the autocorrected command after 2 seconds
-[color]
-    ui = auto
-[filter "lfs"]
-    clean = git lfs clean %f
-    smudge = git lfs smudge %f
-    required = true
-[alias]
-    co = checkout
-    ec = config --global -e
-    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
-    tfup = !git tfs pull --rebase --ignore-not-init-branches --debug $@
-    ct = tfs ct
-    rct = !git tfup && git tfs rcheckin --debug
-    cob = checkout -b
-    cm = !git add -A && git commit -m
-    save = !git add -A && git commit -m 'SAVEPOINT'
-    wip = !git add -u && git commit -m "WIP" 
-    undo = reset HEAD~1 --mixed
-    amend = commit -a --amend
-    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-    bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
-    migrate = "!f(){ CURRENT=$(git symbolic-ref --short HEAD); git checkout -b $1 && git branch --force $CURRENT ${3-'$CURRENT@{u}'} && git rebase --onto ${2-master} $CURRENT; }; f"
-    shelve = "!f(){ CURRENT=$(git symbolic-ref --short HEAD); git tfs shelve $CURRENT -f; }; f"
-    userstats = shortlog -sne
-    lga = log --graph --oneline --all --decorate --abbrev-commit
-    standup = "!f() { USERNAME=$(git config user.name); if [ $(date +%u) -eq 1 ]; then git --no-pager lga --since=\"last friday\" --author=\"$USERNAME\"; else git --no-pager lga --since=\"1 day ago\" --author=\"$USERNAME\"; fi; }; f"
-    retrospective = "!f() { USERNAME=$(git config user.name); git --no-pager lga --since=\"2 weeks ago\" --author=\"$USERNAME\"; }; f"
-[push]
-    default = simple
-[http]
-    sslVerify = false  # Our internal servers use self signed certs
-[url "https://"]
-    insteadOf = git://  # force https:// protocol instead of git:// because of the self signed cert
-[url "https://github.com"]
-    insteadOf = git@github.com  # allow pushing to github
-[fetch]
-	prune = true
+    # This is Git's per-user configuration file.
+    [user]
+    # Please adapt and uncomment the following lines:
+        #name = John Van Tuyl
+        #email = jpvant@pemco.com
+        useConfigOnly = true
+    [core]
+        # These CR/LF settings seem to work well for repositories that will only be edited on Windows machines.
+        autocrlf = false
+        safecrlf = false
+        excludesfile = H:\\My Documents\\gitignore_global.txt
+        editor = '"C:\\Program Files\\Microsoft VS Code\\Code.exe"'
+        filemode = false
+    [help]
+        autocorrect = 20  # git will re-submit the autocorrected command after 2 seconds
+    [color]
+        ui = auto
+    [filter "lfs"]
+        clean = git lfs clean %f
+        smudge = git lfs smudge %f
+        required = true
+    [alias]
+        co = checkout
+        ec = config --global -e
+        up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+        tfup = !git tfs pull --rebase --ignore-not-init-branches --debug $@
+        ct = tfs ct
+        rct = !git tfup && git tfs rcheckin --debug
+        cob = checkout -b
+        cm = !git add -A && git commit -m
+        save = !git add -A && git commit -m 'SAVEPOINT'
+        wip = !git add -u && git commit -m "WIP" 
+        undo = reset HEAD~1 --mixed
+        amend = commit -a --amend
+        wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+        bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+        bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+        migrate = "!f(){ CURRENT=$(git symbolic-ref --short HEAD); git checkout -b $1 && git branch --force $CURRENT ${3-'$CURRENT@{u}'} && git rebase --onto ${2-master} $CURRENT; }; f"
+        shelve = "!f(){ CURRENT=$(git symbolic-ref --short HEAD); git tfs shelve $CURRENT -f; }; f"
+        userstats = shortlog -sne
+        lga = log --graph --oneline --all --decorate --abbrev-commit
+        standup = "!f() { USERNAME=$(git config user.name); if [ $(date +%u) -eq 1 ]; then git --no-pager lga --since=\"last friday\" --author=\"$USERNAME\"; else git --no-pager lga --since=\"1 day ago\" --author=\"$USERNAME\"; fi; }; f"
+        retrospective = "!f() { USERNAME=$(git config user.name); git --no-pager lga --since=\"2 weeks ago\" --author=\"$USERNAME\"; }; f"
+    [push]
+        default = simple
+    [http]
+        sslVerify = false  # Our internal servers use self signed certs
+    [url "https://"]
+        insteadOf = git://  # force https:// protocol instead of git:// because of the self signed cert
+    [url "https://github.com"]
+        insteadOf = git@github.com  # allow pushing to github
+    [fetch]
+        prune = true
 
 Editors
 You will need a shell sometimes but it’s more productive to do a lot of your day to day operations in an editor.
