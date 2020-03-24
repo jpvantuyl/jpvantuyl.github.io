@@ -28,9 +28,7 @@ google_analytics_tracking_id: UA-48718702-1
 #
 # Jekyll Settings
 #
-markdown: redcarpet
-redcarpet:
-  extensions: ["tables"]
+markdown: GFM
 permalink: /posts/:year/:month/:day/:title/
 paginate: 20
 paginate_path: "page/:num"
