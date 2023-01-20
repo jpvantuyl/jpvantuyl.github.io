@@ -12,5 +12,5 @@ Now that I've got kids I use them for homework assignments that I generate mere 
 
 Here's a passphrase generator using the "ten hundred" most popular words that Randall Munroe used in his [Thing Explainer](https://xkcd.com/thing-explainer/) book.
 
-<pre><code style="font-size:larger;">huh ever able clothes</code></pre>
+<passphrase style="font-family:monospace;white-space:pre;font-size:xx-large;">huh ever able clothes</passphrase>
 <input type="button" onload="nextPassphrase()" onclick="nextPassphrase()" value="Next">

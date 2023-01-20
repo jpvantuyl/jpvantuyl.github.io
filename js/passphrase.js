@@ -6,6 +6,6 @@ function nextPassphrase() {
     for (let i = 0; i < 4; i++) {
         words.push(upgoer[Math.floor(Math.random() * upgoer.length)]);
     }
-    let resultSpan = document.getElementsByTagName("code")[0];
+    let resultSpan = document.getElementsByTagName("passphrase")[0];
     resultSpan.innerText = resultSpan.textContent = words.join(" ");
 }
