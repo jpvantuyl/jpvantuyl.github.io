@@ -9,3 +9,12 @@ function nextPassphrase() {
     let resultSpan = document.getElementsByTagName("passphrase")[0];
     resultSpan.innerText = resultSpan.textContent = words.join(" ");
 }
+
+function nextNumberphrase() {
+    let numbers = [];
+    for (let i = 0; i < 4; i++) {
+        numbers.push(("000" + Math.floor(Math.random() * 10000)).slice(-4));
+    }
+    let resultSpan = document.getElementsByTagName("numberphrase")[0];
+    resultSpan.innerText = resultSpan.textContent = words.join(" ");
+}
