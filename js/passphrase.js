@@ -16,5 +16,5 @@ function nextNumberphrase() {
         numbers.push(("000" + Math.floor(Math.random() * 10000)).slice(-4));
     }
     let resultSpan = document.getElementsByTagName("numberphrase")[0];
-    resultSpan.innerText = resultSpan.textContent = words.join(" ");
+    resultSpan.innerText = resultSpan.textContent = numbers.join(" ");
 }
