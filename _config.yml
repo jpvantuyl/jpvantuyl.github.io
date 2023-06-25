@@ -1,40 +1,68 @@
-#
-# Blog Settings
-#
-author: John Van Tuyl
-description: Software Developer
-url: https://jpvantuyl.github.io
 title: John Van Tuyl
 subtitle: Software Developer
-gravatar_url: https://2.gravatar.com/avatar/9e8fedfcd92b20263ceaab4e6cec2202
-subscribe_rss: https://jpvantuyl.github.io/atom.xml
+author: John Van Tuyl
+avatar_url: https://2.gravatar.com/avatar/9e8fedfcd92b20263ceaab4e6cec2202?s=160 # Should be 160x160px.
+# email: your-email@domain.com  # Comment out this line if you don't want to expose your email.
 
-# Github repositories
-github_user: jpvantuyl
-github_repo_url: https://github.com/jpvantuyl/jpvantuyl.github.io/
+repository: jpvantuyl/jpvantuyl.github.io
 
-# Twitter
-twitter_user: jpvantuyl
-twitter_tweet_button: false
 
-# Disqus Comments
-#disqus_short_name: johnvantuyl
-#disqus_show_comment_count: true
+# contact
+mastodon:
+  username: jpvantuyl
+  instance: infosec.exchange
+github_username:  jpvantuyl
+rss: rss
 
-# Google Analytics
-# google_analytics_tracking_id: UA-48718702-1
+# 
+# Subscribe Feed
+# 
+# By default, your site generates a subscription feed (RSS/Atom) at /feed.xml
+# Uncomment the next two lines to change the path.
+feed:
+   path: /atom.xml
 
+# If you use a feed publisher such as Feedburner, uncomment the next line
+subscribe_rss: http://johnvantuyl.com/feeds
+
+# Homepage
+show_excerpts: true  # set to true to show excerpts on the homepage, otherwise full posts are shown
+
+# Comments
+# To enable comments, set the `enabled` field to true and supply either a Disqus short name or a Jekyll comments receiver
+comments:
+  enabled: false
+  show_count: true
+  receiver:  # See https://haacked.com/archive/2018/06/24/comments-for-jekyll-blogs/ for more information.
+
+emptyArray: [] # Leave this here.
+
+# haackbar date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+haackbar:
+  date_format: "%b %-d, %Y"
 
 #
 # Jekyll Settings
 #
-markdown: GFM
 permalink: /posts/:year/:month/:day/:title/
 paginate: 20
+page_group_size: 5 # number of pages to group by in the pagination.
 paginate_path: "page/:num"
 category_dir: categories
-exclude: [vendor]
 
-gems:
+# Build settings
+markdown: GFM
+
+exclude: [README.md CODE_OF_CONDUCT.md script .gitattributes .gitignore keybase.txt RakeFile vendor]
+keep_files: [images demos code robots.txt favicon.ico]
+incremental: true
+
+# Plugins
+plugins:
+  - jekyll-github-metadata
+  - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-include-cache
